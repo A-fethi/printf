@@ -3,12 +3,11 @@
 /**
  * _putchar - Writes the character c to stdout
  * @c: The character to write
- *
- * Return: 1 on Succes.
- * On Error, it returns -1, errno is set appropriately.
+ * @len: lenght of charcter
  */
-int _putchar(char c)
+void	_putchar(char c, int *len)
 {
-	return (write(1, &c, 1));
+	write(1, &c, 1);
+	(*len)++;
 }
 
