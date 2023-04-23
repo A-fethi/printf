@@ -7,7 +7,7 @@
  *
  * Return: nothing.
  */
-void print_binary(int num, int *len)
+void print_binary(unsigned int num, int *len)
 {
 	int i, size = 2;
 	char *binary;
@@ -17,6 +17,11 @@ void print_binary(int num, int *len)
 	if (num == 0)
 	{
 		binary[0] = '0';
+		i = 1;
+	}
+	else if (num == 1)
+	{
+		binary[0] = '1';
 		i = 1;
 	}
 	else
