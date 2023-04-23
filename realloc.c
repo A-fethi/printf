@@ -10,7 +10,7 @@
  * @new_size: new allocated size
  *
  * Return: a pointer to the new allocated memory, returns NULL if an error.
- */
+*/
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *new;
