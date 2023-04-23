@@ -3,11 +3,11 @@
 /**
  * _putchar - Writes the character c to stdout
  * @c: The character to write
- * @len: lenght of charcter
+ *
+ * Return: void.
  */
-void	_putchar(char c, int *len)
+void _putchar(char c)
 {
 	write(1, &c, 1);
-	(*len)++;
 }
 
