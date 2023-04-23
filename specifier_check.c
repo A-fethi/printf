@@ -3,6 +3,8 @@
 /**
  * specifier_check - check specifier and print adequate formatted token
  * @spec: specifier
+ * @args: arguments list
+ * @len: pointer to string length
  *
  * Return: void
  */

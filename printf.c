@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _puts - Print a string
- * @str: Our string
+ * _printf - Prints formatted string
+ * @format: the formatted string
  *
  * Return: string length
  */
