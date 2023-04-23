@@ -10,20 +10,40 @@
 
 void	print_num(long n, int *len)
 {
-	if (n < 0)
+	int d = 1000000000, l = 0;
+
+	if (n < 0 && n != INT_MIN)
 	{
 		_putchar('-');
 		(*len)++;
 		n = -n;
 	}
-	if (n < 10)
+
+	while (l == 0 && n > 0)
 	{
-		_putchar(n + '0');
+		l = (n / d) % 10;
+		d /= 10;
+	}
+
+	while (d > 0 && n > 0)
+	{
+		_putchar(l + '0');
+		(*len)++;
+		l = (n / d) % 10;
+		d /= 10;
+	}
+
+	if (n != INT_MIN)
+	{
+		_putchar(n % 10 + '0');
 		(*len)++;
 	}
-	else
+
+	if (n == INT_MIN)
 	{
-		print_num(n / 10, len);
-		print_num(n % 10, len);
+		_putchar('-');
+		(*len)++;
+		print_num((INT_MIN / 100) * -1, len);
+		print_num((INT_MIN % 100) * -1, len);
 	}
 }
