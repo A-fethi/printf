@@ -11,7 +11,12 @@
 
 void	_if(va_list args, char type, int *len)
 {
-	if (type == 'c')
+	if (type == '%')
+	{
+		_putchar('%');
+		(*len)++;
+	}
+	else if (type == 'c')
 		(*len) = (*len) + _putchar(va_arg(args, int));
 	else if (type == 's')
 		(*len) = (*len) + _puts(va_arg(args, char *));
@@ -45,11 +50,6 @@ int	_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == '%')
-			{
-				_putchar('%');
-				len++;
-			}
 			_if(args, format[i], &len);
 		}
 		else
