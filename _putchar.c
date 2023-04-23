@@ -9,10 +9,10 @@
 
 int	_putchar(char c)
 {
-	if (c == 0)
+	if (c == '\0')
 	{
-		write(1, "(null)", 6);
-		return (6);
+		write(1, "", 1);
+		return (1);
 	}
 	return (write(1, &c, 1));
 }
