@@ -46,6 +46,8 @@ int	_printf(const char *format, ...)
 	len = 0;
 	if (!format)
 		return (-1);
+	if (!format[i])
+		return (0);
 	va_start(args, format);
 	while (format[i])
 	{
