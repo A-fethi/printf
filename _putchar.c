@@ -1,13 +1,12 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
  * _putchar - Writes the character c to stdout
  * @c: The character to write
  * @len: lenght of charcter
  */
-void	_putchar(char c, int *len)
+int	_putchar(char c)
 {
-	write(1, &c, 1);
-	(*len)++;
+	return (write(1, &c, 1));
 }
 
