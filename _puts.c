@@ -4,7 +4,7 @@
  * _puts - Print a string
  * @str: Our string
  *
- * Return: string length
+ * Return: the string length
  */
 
 int	_puts(char *str)
