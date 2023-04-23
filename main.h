@@ -4,9 +4,11 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 int	_putchar(char c);
 int	_puts(char *str);
-int	print_num(long n, int *len);
+void	print_num(long n, int *len);
+int	_printf(const char *format, ...);
 
-#endif /* MAIN_H */
+#endif
