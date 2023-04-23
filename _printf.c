@@ -1,10 +1,12 @@
 #include "main.h"
 
 /**
- * _if - ...
- * @args: ...
- * @type: ...
- * @len: ...
+ * _if - checks specifiers
+ * @args: arguments líst
+ * @type: specifier
+ * @len: string length
+ *
+ * Return: void
  */
 
 void	_if(va_list args, char type, int *len)
@@ -18,9 +20,10 @@ void	_if(va_list args, char type, int *len)
 }
 
 /**
- * _printf - ...
- * @format: ...
- * Return: ...
+ * _printf - print formatted string
+ * @format: the formatted string
+ *
+ * Return: the string length
  */
 
 int	_printf(const char *format, ...)

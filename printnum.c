@@ -1,9 +1,11 @@
 #include "main.h"
 
 /**
- * print_num - ...
- * @n: ...
- * @len: ...
+ * print_num - prints a number
+ * @n: our number
+ * @len: the string length
+ *
+ * Return: void.
  */
 
 void	print_num(long n, int *len)
