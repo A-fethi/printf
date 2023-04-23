@@ -3,7 +3,7 @@
 /**
  * print_num - prints a number
  * @n: our number
- * @len: the string length
+ * @len: pointer to the string length
  *
  * Return: void.
  */
