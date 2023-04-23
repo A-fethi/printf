@@ -6,15 +6,16 @@
  *
  * Return: string length
  */
-int _puts(char *str)
-{
-	int i, len = 0;
 
-	for (i = 0; str[i] != '\0'; i++)
+int	_puts(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len])
 	{
-		_putchar(str[i]);
+		write(1, &str[len], 1);
 		len++;
 	}
 	return (len);
 }
-
