@@ -20,6 +20,8 @@ void	_if(va_list args, char type, int *len)
 		(*len) = (*len) + _putchar(va_arg(args, int));
 	else if (type == 's')
 		(*len) = (*len) + _puts(va_arg(args, char *));
+	else if (type == 'd' || type == 'i')
+		print_num(va_arg(args, int), len);
 	else
 	{
 		(*len) = (*len) + _putchar('%');
@@ -42,7 +44,7 @@ int	_printf(const char *format, ...)
 
 	i = 0;
 	len = 0;
-	if (format == NULL)
+	if (!format)
 		return (-1);
 	va_start(args, format);
 	while (format[i])
