@@ -11,28 +11,17 @@ void specifier_check(char spec, va_list args, int *len)
 	switch (spec)
 	{
 		case 'c':
-			_putchar(va_arg(args, int));
-			(*len)++;
+			_putchar(va_arg(args, int), len);
 			break;
 		case 's':
-			*len += _puts(va_arg(args, char *));
+			_puts(va_arg(args, char *), len);
 			break;
 		case '%':
-			_putchar('%');
-			(*len)++;
-			break;
-		case ('d'):
-			_putchar((va_arg(args, int)) + '0');
-			(*len)++;
-			break;
-		case ('i'):
-			_putchar((va_arg(args, int)) + '0');
-			(*len)++;
+			_putchar('%', len);
 			break;
 		default:
-			_putchar('%');
-			_putchar(spec);
-			*len += 2;
+			_putchar('%', len);
+			_putchar(spec, len);
 			break;
 	}
 }
