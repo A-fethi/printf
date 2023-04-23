@@ -14,18 +14,22 @@ void print_binary(int num, int *len)
 
 	binary = malloc(size * sizeof(char));
 
-	for (i = 0; num / 2 != 0; i++)
+	if (num == 0)
 	{
-		binary[i] = (num % 2) + '0';
-		binary = _realloc(binary, size * sizeof(char), (size + 1) * sizeof(char));
-		size++;
-		num /= 2;
+		binary[0] = '0';
+		i = 1;
 	}
-	binary[i] = (num % 2) + '0';
-	binary = _realloc(binary, size * sizeof(char), (size + 1) * sizeof(char));
-	size++;
-	num /= 2;
-	binary[++i] = '\0';
+	else
+	{
+		for (i = 0; num != 0; i++)
+		{
+			binary[i] = (num % 2) + '0';
+			binary = _realloc(binary, size * sizeof(char), (size + 1) * sizeof(char));
+			size++;
+			num /= 2;
+		}
+	}
+	binary[i] = '\0';
 	rev_string(binary);
 	*len += _puts(binary);
 	free(binary);
