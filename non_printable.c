@@ -23,7 +23,7 @@ int	char_to_upper_hex(int num, int *len)
 	if (num < 16)
 	{
 		*len += _printf("0%c", up[num]);
-		return;
+		return (0);
 	}
 	else
 	{
