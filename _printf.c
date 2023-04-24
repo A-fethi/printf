@@ -19,7 +19,8 @@ void	ft_if(va_list args, char type, int *len)
 		*len += _non_printable(va_arg(args, char *));
 	else if (type == 'p')
 	{
-		_address(va_arg(args, unsigned long), len);
+		_puts("0x");
+		_hexalower(va_arg(args, unsigned long), len);
 	}
 	else
 	{
