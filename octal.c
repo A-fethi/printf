@@ -25,7 +25,7 @@ int	_octal(unsigned int num)
 	len++;
 	store = malloc(len * sizeof(int));
 	if (!store)
-		return (NULL);
+		return (-1);
 	while (i < len)
 	{
 		remainder = num % 8;
