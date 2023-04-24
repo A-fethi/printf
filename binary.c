@@ -12,13 +12,6 @@ void print_binary(int num, int *len)
 	int i, size = 2;
 	char *binary;
 
-	if (num < 0)
-	{
-		num *= -1;
-		_putchar('1');
-		(*len)++;
-	}
-
 	binary = malloc(size * sizeof(char));
 
 	if (num == 0)
