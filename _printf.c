@@ -1,12 +1,39 @@
 #include "main.h"
 
 /**
+ * flags - check flags
+ * @format: format string
+ * @args: argument list
+ * @type: specifier
+ * @len: string lenght
+ *
+ * Return: 1 if puts something, 0 if not
+ */
+int	flags(char type, int *len)
+{
+	if (type == ' ')
+	{
+		*len += _putchar(' ');
+		return (1);
+	}
+	else if (type == '+')
+	{
+		*len += _putchar('+');
+		return (1);
+	}
+	else if (type == '#')
+	{
+		*len += _putchar('#');
+		return (1);
+	}
+	return (0);
+}
+/**
  * ft_if - check specifiers
  * @args: argument list
  * @type: specifier
  * @len: string lenght
  */
-
 void	ft_if(va_list args, char type, int *len)
 {
 	if (type == 'x')
@@ -75,7 +102,6 @@ void	_if(va_list args, char type, int *len)
  *
  * Return: the string length
  */
-
 int	_printf(const char *format, ...)
 {
 	int	i;
@@ -92,6 +118,8 @@ int	_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (flags(format[i], &len))
+				i++;
 			_if(args, format[i], &len);
 		}
 		else
