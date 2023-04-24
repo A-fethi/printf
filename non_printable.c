@@ -31,8 +31,7 @@ void	char_to_upper_hex(int num, int *len)
 	hex[i] = '\0';
 	rev_string(hex);
 	*len += _putchar(hex[0]);
-	if (hex[1])
-		*len += _putchar(hex[1]);
+	*len += _putchar(hex[1]);
 	free(hex);
 }
 
@@ -46,7 +45,7 @@ void	char_to_upper_hex(int num, int *len)
 int	_non_printable(char *s)
 {
 	int len;
-	char c;
+	int c;
 
 	len = 0;
 	if (!s)
