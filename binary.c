@@ -5,14 +5,19 @@
  * @num: number to convert
  * @len: pointer to string length
  *
- * Return: nothing.
+ * Return: 0 on succes, -1 on error
  */
-void print_binary(unsigned int num, int *len)
+int print_binary(unsigned int num, int *len)
 {
 	int i, size = 2;
 	char *binary;
 
 	binary = malloc(size * sizeof(char));
+	if (!binary)
+	{
+		free(binary);
+		return;
+	}
 
 	if (num == 0)
 	{
