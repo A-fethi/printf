@@ -1,6 +1,33 @@
 #include "main.h"
 
 /**
+ * ft_if - check specifiers
+ * @args: argument list
+ * @type: specifier
+ * @len: string lenght
+ */
+
+void	ft_if(va_list args, char type, int *len)
+{
+	if (type == 'x')
+		_hexalower(va_arg(args, unsigned int), len);
+	else if (type == 'X')
+		_hexaupper(va_arg(args, unsigned int), len);
+	else if (type == 'u')
+		_unsigned(va_arg(args, unsigned int), len);
+	else if (type == 'p')
+	{
+		(*len) = (*len) + _puts("0x");
+		_hexalower(va_arg(args, unsigned long), len);
+	}
+	else
+	{
+		(*len) = (*len) + _putchar('%');
+		(*len) = (*len) + _putchar(type);
+	}
+}
+
+/**
  * _if - checks specifiers
  * @args: arguments líst
  * @type: specifier
@@ -25,11 +52,9 @@ void	_if(va_list args, char type, int *len)
 	else if (type == 'b')
 		print_binary(va_arg(args, int), len);
 	else
-	{
-		(*len) = (*len) + _putchar('%');
-		(*len) = (*len) + _putchar(type);
-	}
+		ft_if(args, type, &*len);
 }
+
 
 /**
  * _printf - print formatted string
