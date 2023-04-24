@@ -13,7 +13,7 @@ void	print_num(long n, int *len);
 int	_printf(const char *format, ...);
 int	print_binary(unsigned int num, int *len);
 void	*_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-char	*rev_string(char *s);
+int	rev_string(char *s);
 void	_hexalower(unsigned long num, int *len);
 void	_hexaupper(unsigned long num, int *len);
 void	_unsigned(unsigned long n, int *len);
