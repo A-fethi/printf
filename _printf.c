@@ -19,6 +19,8 @@ void	ft_if(va_list args, char type, int *len)
 		*len += _non_printable(va_arg(args, char *));
 	else if (type == 'p')
 	{
+		if (!p)
+			return (_puts("(nil)"));
 		(*len) = (*len) + _puts("0x");
 		_hexalower(va_arg(args, unsigned long), len);
 	}
@@ -53,6 +55,8 @@ void	_if(va_list args, char type, int *len)
 		print_num(va_arg(args, int), len);
 	else if (type == 'b')
 		print_binary(va_arg(args, int), len);
+	else if (type == 'o')
+		(*len) = (*len) + _octal(va_arg(args, int));
 	else
 		ft_if(args, type, &*len);
 }
