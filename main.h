@@ -20,6 +20,6 @@ void	_unsigned(unsigned long n, int *len);
 int	_non_printable(char *s);
 int	char_to_upper_hex(int num, int *len);
 int	_octal(unsigned int num);
-int	flags(char type, int *len);
+int	flags(const char *type, int *len);
 
 #endif

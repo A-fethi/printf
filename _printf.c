@@ -2,28 +2,29 @@
 
 /**
  * flags - check flags
- * @format: format string
- * @args: argument list
  * @type: specifier
  * @len: string lenght
  *
  * Return: 1 if puts something, 0 if not
  */
-int	flags(char type, int *len)
+int	flags(const char *type, int *len)
 {
-	if (type == ' ')
+	if (*type == ' ')
 	{
 		*len += _putchar(' ');
 		return (1);
 	}
-	else if (type == '+')
+	else if (*type == '+')
 	{
 		*len += _putchar('+');
 		return (1);
 	}
-	else if (type == '#')
+	else if (*type == '#')
 	{
-		*len += _putchar('#');
+		if (*(type + 1) == 'o')
+			*len = _putchar('0');
+		if (*(type + 1) == 'x' || *(type + 1) == 'X')
+			*len = _printf("0x");
 		return (1);
 	}
 	return (0);
@@ -118,7 +119,7 @@ int	_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (flags(format[i], &len))
+			if (flags(&format[i], &len))
 				i++;
 			_if(args, format[i], &len);
 		}
