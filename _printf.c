@@ -19,8 +19,8 @@ void	ft_if(va_list args, char type, int *len)
 		*len += _non_printable(va_arg(args, char *));
 	else if (type == 'p')
 	{
-		if (!p)
-			return (_puts("(nil)"));
+		if (!type)
+			_puts("(nil)");
 		(*len) = (*len) + _puts("0x");
 		_hexalower(va_arg(args, unsigned long), len);
 	}
