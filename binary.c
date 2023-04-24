@@ -16,7 +16,7 @@ int print_binary(unsigned int num, int *len)
 	if (!binary)
 	{
 		free(binary);
-		return;
+		return (-1);
 	}
 
 	if (num == 0)
@@ -43,4 +43,5 @@ int print_binary(unsigned int num, int *len)
 	rev_string(binary);
 	*len += _puts(binary);
 	free(binary);
+	return (0);
 }
