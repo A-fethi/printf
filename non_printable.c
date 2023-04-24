@@ -12,6 +12,8 @@ void	char_to_upper_hex(int num, int *len)
 	char *up = "0123456789ABCDEF";
 
 	hex = malloc(size * sizeof(char));
+	if (!hex)
+		exit(-1);
 
 	if (num < 16)
 	{
