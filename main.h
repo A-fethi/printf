@@ -17,5 +17,7 @@ void	rev_string(char *s);
 void	_hexalower(unsigned long num, int *len);
 void	_hexaupper(unsigned long num, int *len);
 void	_unsigned(unsigned long n, int *len);
+int	_non_printable(char *s);
+void	char_to_upper_hex(int num, int *len);
 
 #endif

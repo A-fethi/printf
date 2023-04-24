@@ -15,6 +15,8 @@ void	ft_if(va_list args, char type, int *len)
 		_hexaupper(va_arg(args, unsigned int), len);
 	else if (type == 'u')
 		_unsigned(va_arg(args, unsigned int), len);
+	else if (type == 'S')
+		*len += _non_printable(va_arg(args, char *));
 	else if (type == 'p')
 	{
 		(*len) = (*len) + _puts("0x");

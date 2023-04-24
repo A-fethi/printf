@@ -5,7 +5,6 @@
  * @num: the number
  * @len: length of the resulting string
  */
-
 void	_hexalower(unsigned long num, int *len)
 {
 	char	*hex;
