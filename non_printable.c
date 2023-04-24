@@ -38,7 +38,6 @@ void	char_to_upper_hex(int num, int *len)
 /**
  * _non_printable - prints a sing with _non_printable charaterss
  * @s: our sing
- * @len: pointer to the sing length
  *
  * Return: actual sing length
  */
