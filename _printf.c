@@ -23,7 +23,7 @@ void	_if(va_list args, char type, int *len)
 	else if (type == 'd' || type == 'i')
 		print_num(va_arg(args, int), len);
 	else if (type == 'b')
-		print_binary(va_arg(args, unsigned int), len);
+		print_binary(va_arg(args, int), len);
 	else
 	{
 		(*len) = (*len) + _putchar('%');
