@@ -4,8 +4,10 @@
  * char_to_upper_hex - convert num to hex lower
  * @num: the number
  * @len: pointer to the string length
+ *
+ * Return: 0 on succes, -1 on error
  */
-void	char_to_upper_hex(int num, int *len)
+int	char_to_upper_hex(int num, int *len)
 {
 	int i, size = 2;
 	char *hex;
