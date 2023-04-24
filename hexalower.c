@@ -10,6 +10,8 @@ void	_hexalower(unsigned long num, int *len)
 	char	*hex;
 
 	hex = "0123456789abcdef";
+	if (!hex)
+		exit(-1);
 	if (num > 15)
 		_hexalower(num / 16, len);
 	_putchar(hex[num % 16]);
