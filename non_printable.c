@@ -15,7 +15,10 @@ int	char_to_upper_hex(int num, int *len)
 
 	hex = malloc(size * sizeof(char));
 	if (!hex)
-		exit(-1);
+	{
+		free(hex);
+		return (-1);
+	}
 
 	if (num < 16)
 	{
@@ -37,6 +40,7 @@ int	char_to_upper_hex(int num, int *len)
 	*len += _putchar(hex[0]);
 	*len += _putchar(hex[1]);
 	free(hex);
+	return (0);
 }
 
 /**
