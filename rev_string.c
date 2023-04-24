@@ -27,11 +27,7 @@ int	rev_string(char *s)
 		s[len - i] = tmp;
 		i++;
 	}
-	i = 0;
-	while (i <= len)
-	{
-		_putchar(s[i]);
-		i++;
-	}
+	_putchar('%');
+	_putchar('r');
 	return (len);
 }
