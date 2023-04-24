@@ -6,9 +6,9 @@
  * rev_string - Reverse a string
  * @s: Our string
  *
- * Return: void.
+ * Return: reversed string.
  */
-void rev_string(char *s)
+char *rev_string(char *s)
 {
 	int i, len = 0;
 	int tmp = 0;
@@ -28,5 +28,7 @@ void rev_string(char *s)
 		s[len - i] = tmp;
 		i++;
 	}
+
+	return (s);
 }
 
