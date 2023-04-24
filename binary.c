@@ -7,7 +7,7 @@
  *
  * Return: nothing.
  */
-void print_binary(unsigned int num, int *len)
+void print_binary(int num, int *len)
 {
 	int i, size = 2;
 	char *binary;
