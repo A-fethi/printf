@@ -56,7 +56,7 @@ int	_non_printable(char *s)
 	while (s[len])
 	{
 		c = s[len];
-		if ((c > 0 && c < 23) || c >= 127)
+		if ((c > 0 && c < 32) || c >= 127)
 		{
 			len += _printf("\\x");
 			char_to_upper_hex(c, &len);
