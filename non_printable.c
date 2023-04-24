@@ -4,19 +4,26 @@
  * char_to_upper_hex - convert num to hex lower
  * @num: the number
  * @len: pointer to the string length
+ *
+ * Return: 0 on succes, -1 on error
  */
-void	char_to_upper_hex(int num, int *len)
+int	char_to_upper_hex(int num, int *len)
 {
 	int i, size = 2;
 	char *hex;
 	char *up = "0123456789ABCDEF";
 
 	hex = malloc(size * sizeof(char));
+	if (!hex)
+	{
+		free(hex);
+		return (-1);
+	}
 
 	if (num < 16)
 	{
 		*len += _printf("0%c", up[num]);
-		return;
+		return (0);
 	}
 	else
 	{
@@ -33,6 +40,7 @@ void	char_to_upper_hex(int num, int *len)
 	*len += _putchar(hex[0]);
 	*len += _putchar(hex[1]);
 	free(hex);
+	return (0);
 }
 
 /**
