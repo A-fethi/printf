@@ -11,8 +11,11 @@ int	_putchar(char c);
 int	_puts(char *str);
 void	print_num(long n, int *len);
 int	_printf(const char *format, ...);
-void print_binary(unsigned int num, int *len);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-void rev_string(char *s);
+void	print_binary(unsigned int num, int *len);
+void	*_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void	rev_string(char *s);
+void	_hexalower(unsigned int num, int *len);
+void	_hexaupper(unsigned int num, int *len);
+void	_unsigned(unsigned long n, int *len);
 
 #endif
