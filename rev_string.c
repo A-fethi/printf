@@ -6,12 +6,12 @@
  * rev_string - Reverse a string
  * @s: Our string
  *
- * Return: reversed string
+ * Return: void.
  */
-char *rev_string(char *s)
+void rev_string(char *s)
 {
-	int i = 0, len = 0;
-	char tmp = 0;
+	int i, len = 0;
+	int tmp = 0;
 
 	if (s == NULL)
 		return (-1);
@@ -19,16 +19,16 @@ char *rev_string(char *s)
 	{
 		len++;
 	}
+
+	i = 0;
 	len--;
 
-	_printf("%d", len);
-	for (i = 0; i <= len / 2; i++)
+	while (i <= len / 2)
 	{
 		tmp = s[i];
-		s[i] = s[len - 1 - i];
+		s[i] = s[len - i];
 		s[len - i] = tmp;
+		i++;
 	}
-
-	return (s);
 }
 
