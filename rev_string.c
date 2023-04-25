@@ -1,16 +1,17 @@
 #include "main.h"
+#include <stdio.h>
+#include <limits.h>
 
 /**
  * rev_string - Reverse a string
  * @s: Our string
  *
- * Return: reversed string.
+ * Return: reversed string
  */
-
-int	rev_string(char *s)
+char *rev_string(char *s)
 {
-	int i, len = 0;
-	int tmp = 0;
+	int i = 0, len = 0;
+	char tmp = 0;
 
 	if (s == NULL)
 		return (-1);
@@ -18,22 +19,16 @@ int	rev_string(char *s)
 	{
 		len++;
 	}
-
-	i = 0;
 	len--;
 
-	while (i <= len / 2)
+	_printf("%d", len);
+	for (i = 0; i <= len / 2; i++)
 	{
 		tmp = s[i];
-		s[i] = s[len - i];
+		s[i] = s[len - 1 - i];
 		s[len - i] = tmp;
-		i++;
 	}
-	i = 0;
-	while (i <= len)
-	{
-		_putchar(s[i]);
-		i++;
-	}
-	return (len);
+
+	return (s);
 }
+

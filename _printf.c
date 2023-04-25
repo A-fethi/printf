@@ -46,7 +46,7 @@ void	ft_if(va_list args, char type, int *len)
 	else if (type == 'S')
 		*len += _non_printable(va_arg(args, char *));
 	else if (type == 'r')
-		*len += _puts(rev_string(va_arg(args, char *)));
+		*len+= print_rev(va_arg(args, char *));
 	else if (type == 'p')
 	{
 		void *p = va_arg(args, void *);
