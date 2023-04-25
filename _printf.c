@@ -43,10 +43,6 @@ void	ft_if(va_list args, char type, int *len)
 		_hexaupper(va_arg(args, unsigned int), len);
 	else if (type == 'u')
 		_unsigned(va_arg(args, unsigned int), len);
-	else if (type == 'S')
-		*len += _non_printable(va_arg(args, char *));
-	else if (type == 'r')
-		*len+= print_rev(va_arg(args, char *));
 	else if (type == 'p')
 	{
 		void *p = va_arg(args, void *);
@@ -59,6 +55,12 @@ void	ft_if(va_list args, char type, int *len)
 			_hexalower((unsigned long)p, len);
 		}
 	}
+	else if (type == 'S')
+		*len += _non_printable(va_arg(args, char *));
+	else if (type == 'r')
+		*len += print_rev(va_arg(args, char *));
+	else if (type == 'R')
+		*len += rot13(va_arg(args, char *));
 	else
 	{
 		(*len) = (*len) + _putchar('%');

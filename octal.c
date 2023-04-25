@@ -3,7 +3,8 @@
 /**
  * _octal - prints octal number
  * @num: the number
- * Return: lenght of number printed
+ *
+ * Return: lenght of printed number, -1 if an error occurs
  */
 
 int	_octal(unsigned int num)
