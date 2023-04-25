@@ -66,11 +66,10 @@ int	_non_printable(char *s)
 		{
 			len += _printf("\\x");
 			char_to_upper_hex(c, &len);
-			_printf(" (endfunc) ");
 		}
 		else
 		{
-			write(1, &s[len], 1);
+			_putchar(s[i]);
 			len++;
 		}
 	}
