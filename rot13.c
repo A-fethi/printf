@@ -14,6 +14,12 @@ int rot13(char *s)
 	char *output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	char *rotated = _strdup(s);
 
+	if (!rotated)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+
 	for (i = 0; rotated[i] != '\0'; i++)
 	{
 		for (j = 0; input[j] != '\0'; j++)
