@@ -40,7 +40,7 @@ void	non_custom_specifiers(va_list args, char type, int *len)
 	if (type == 'b')
 		print_binary(va_arg(args, int), len);
 	else if (type == 'S')
-		*len += _non_printable(va_arg(args, char *));
+		(*len) += _non_printable(va_arg(args, char *));
 	else if (type == 'r')
 		*len += print_rev(va_arg(args, char *));
 	else if (type == 'R')
