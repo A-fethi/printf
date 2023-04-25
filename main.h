@@ -18,7 +18,7 @@ char	*_strdup(char *str);
 int	print_rev(char *s);
 void	_hexalower(unsigned long num, int *len);
 void	_hexaupper(unsigned long num, int *len);
-void	_unsigned(unsigned long n, int *len);
+void	_unsigned(unsigned int n, int *len);
 int	_non_printable(char *s);
 int	char_to_upper_hex(int num, int *len);
 int	_octal(unsigned int num);

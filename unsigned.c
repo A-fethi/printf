@@ -6,7 +6,7 @@
  * @len: pointer to the string length
  */
 
-void	_unsigned(unsigned long n, int *len)
+void	_unsigned(unsigned int n, int *len)
 {
 	int d = 1000000000, l = 0;
 

@@ -60,6 +60,8 @@ void	non_custom_specifiers(va_list args, char type, int *len)
  */
 void	custom_specifiers(va_list args, char type, int *len)
 {
+	long int n;
+
 	if (type == '%')
 	{
 		_putchar('%');
@@ -73,12 +75,17 @@ void	custom_specifiers(va_list args, char type, int *len)
 		print_num(va_arg(args, int), len);
 	else if (type == 'o')
 		(*len) = (*len) + _octal(va_arg(args, int));
+	else if (type == 'u')
+	{
+		n = va_arg(args, unsigned int);
+		if (n < 0)
+			n = -n;
+		print_num(n, len);
+	}
 	else if (type == 'x')
 		_hexalower(va_arg(args, unsigned int), len);
 	else if (type == 'X')
 		_hexaupper(va_arg(args, unsigned int), len);
-	else if (type == 'u')
-		_unsigned(va_arg(args, unsigned int), len);
 	else if (type == 'p')
 	{
 		void *p = va_arg(args, void *);
