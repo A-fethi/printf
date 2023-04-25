@@ -95,7 +95,6 @@ void	custom_specifiers(va_list args, char type, int *len)
 		non_custom_specifiers(args, type, &*len);
 }
 
-
 /**
  * _printf - print formatted string
  * @format: the formatted string
@@ -120,6 +119,7 @@ int	_printf(const char *format, ...)
 			i++;
 			if (flags(&format[i], &len))
 				i++;
+			_printf("n = %d\n", width(&format[i], &i));
 			custom_specifiers(args, format[i], &len);
 		}
 		else

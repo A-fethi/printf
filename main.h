@@ -26,5 +26,9 @@ int	flags(const char *type, int *len);
 void	custom_specifiers(va_list args, char type, int *len);
 void	non_custom_specifiers(va_list args, char type, int *len);
 int	rot13(char *s);
+int	_atoi(char *s);
+int	_isdigit(int c);
+int	_isalpha(int c);
+int	width(const char *type, int *i);
 
 #endif
