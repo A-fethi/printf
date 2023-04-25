@@ -69,7 +69,7 @@ int	_non_printable(char *s)
 		}
 		else
 		{
-			_putchar(c);
+			_putchar(s[i]);
 			len++;
 		}
 	}
