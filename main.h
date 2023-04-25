@@ -23,8 +23,8 @@ int	_non_printable(char *s);
 int	char_to_upper_hex(int num, int *len);
 int	_octal(unsigned int num);
 int	flags(const char *type, int *len);
-void	_if(va_list args, char type, int *len);
-void	ft_if(va_list args, char type, int *len);
+void	custom_specifiers(va_list args, char type, int *len);
+void	non_custom_specifiers(va_list args, char type, int *len);
 int	rot13(char *s);
 
 #endif

@@ -30,14 +30,50 @@ int	flags(const char *type, int *len)
 	return (0);
 }
 /**
- * ft_if - check specifiers
+ * non_custom_specifiers- check non custom specifiers
  * @args: argument list
  * @type: specifier
  * @len: string lenght
  */
-void	ft_if(va_list args, char type, int *len)
+void	non_custom_specifiers(va_list args, char type, int *len)
 {
-	if (type == 'x')
+	if (type == 'b')
+		print_binary(va_arg(args, int), len);
+	else if (type == 'S')
+		*len += _non_printable(va_arg(args, char *));
+	else if (type == 'r')
+		*len += print_rev(va_arg(args, char *));
+	else if (type == 'R')
+		*len += rot13(va_arg(args, char *));
+	else
+	{
+		(*len) = (*len) + _putchar('%');
+		(*len) = (*len) + _putchar(type);
+	}
+}
+
+/**
+ * custom_specifiers - checks custom specifiers
+ * @args: arguments líst
+ * @type: specifier
+ * @len: string length
+ */
+void	custom_specifiers(va_list args, char type, int *len)
+{
+	if (type == '%')
+	{
+		_putchar('%');
+		(*len)++;
+	}
+	else if (type == 'c')
+		(*len) = (*len) + _putchar(va_arg(args, int));
+	else if (type == 's')
+		(*len) = (*len) + _puts(va_arg(args, char *));
+	else if (type == 'd' || type == 'i')
+		print_num(va_arg(args, int), len);
+	else if (type == 'o')
+		(*len) = (*len) + _octal(va_arg(args, int));
+	else if (type == 'x')
 		_hexalower(va_arg(args, unsigned int), len);
 	else if (type == 'X')
 		_hexaupper(va_arg(args, unsigned int), len);
@@ -55,47 +91,8 @@ void	ft_if(va_list args, char type, int *len)
 			_hexalower((unsigned long)p, len);
 		}
 	}
-	else if (type == 'S')
-		*len += _non_printable(va_arg(args, char *));
-	else if (type == 'r')
-		*len += print_rev(va_arg(args, char *));
-	else if (type == 'R')
-		*len += rot13(va_arg(args, char *));
 	else
-	{
-		(*len) = (*len) + _putchar('%');
-		(*len) = (*len) + _putchar(type);
-	}
-}
-
-/**
- * _if - checks specifiers
- * @args: arguments líst
- * @type: specifier
- * @len: string length
- *
- * Return: void
- */
-
-void	_if(va_list args, char type, int *len)
-{
-	if (type == '%')
-	{
-		_putchar('%');
-		(*len)++;
-	}
-	else if (type == 'c')
-		(*len) = (*len) + _putchar(va_arg(args, int));
-	else if (type == 's')
-		(*len) = (*len) + _puts(va_arg(args, char *));
-	else if (type == 'd' || type == 'i')
-		print_num(va_arg(args, int), len);
-	else if (type == 'b')
-		print_binary(va_arg(args, int), len);
-	else if (type == 'o')
-		(*len) = (*len) + _octal(va_arg(args, int));
-	else
-		ft_if(args, type, &*len);
+		non_custom_specifiers(args, type, &*len);
 }
 
 
@@ -123,7 +120,7 @@ int	_printf(const char *format, ...)
 			i++;
 			if (flags(&format[i], &len))
 				i++;
-			_if(args, format[i], &len);
+			custom_specifiers(args, format[i], &len);
 		}
 		else
 			len = len + _putchar(format[i]);
